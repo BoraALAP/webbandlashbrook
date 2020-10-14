@@ -2,9 +2,9 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Sanity Developer Portfolio Starter`,
-    description: `Get your development portfolio off the ground with this deployment-ready Gatsby + Sanity CMS Starter.`,
-    author: `@jacobneterer`,
+    title: `Webb and Lashbrook`,
+    description: `Your dream home and an architect’s vision meet in the hands of the tradesperson. Our unique expertise in complex contemporary renovation and building is rooted in respect for architecture, design and true partnership with our clients.`,
+    author: `@boraalap`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -23,13 +23,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `webb-and-lashbrook`,
+        short_name: `wl`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/components/assets/images/jn.png`
+        icon: `src/components/assets/branding/WLlogo.png`
       },
     },
     {
