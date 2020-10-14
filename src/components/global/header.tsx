@@ -21,7 +21,7 @@ const Header = () => {
     if (window.scrollY > 100) {
       setScrolled(true)
     } else {
-      setScrolled(false)
+      setScrolled(false) 
     }
   }
 

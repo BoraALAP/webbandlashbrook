@@ -18,6 +18,7 @@
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-plugin-transition-link": "^1.20.2",
     "gatsby-plugin-typescript": "^2.3.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-sharp": "^2.4.3",

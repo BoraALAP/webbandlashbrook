@@ -5,9 +5,9 @@ import InnerContent from "../components/ui/element/innerContent"
 
 const Enterence = props => {
   return (
-    <Container> 
+    <Container>
       <Content>
-        <Left> 
+        <Left>
           <h5>
             Your dream home and an architect’s vision meet in the hands of the
             tradesperson. Our unique expertise in complex contemporary
@@ -35,7 +35,7 @@ const Container = styled.section`
   position: relative;
   @media screen and (min-width: 768px) {
     top: -100px;
-    }
+  }
 `
 
 const Content = styled.div`
@@ -58,7 +58,7 @@ const Left = styled.div`
 
   @media screen and (min-width: 768px) {
     padding: 5vw 2.5vw 2.5vh 5vw;
-    }
+  }
 `
 
 const Right = styled.div`

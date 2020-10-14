@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { WLlogo } from "../assets/branding/WLlogo"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Nav from "./nav"
 import Social from "./social"
 
@@ -8,8 +9,10 @@ const Footer = props => {
   return (
     <Container>
       <Top>
+      <AniLink paintDrip to="/" hex="#000">
         <WLlogo color="#fff" size="100px" />
-        <Nav />
+        </AniLink>
+        {/* <Nav /> */}
         <Social />
       </Top>
       <Bottom>

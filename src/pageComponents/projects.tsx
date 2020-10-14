@@ -105,7 +105,7 @@ const Text = styled.div`
   height: fit-content;
   h6 {
     font-weight: 400;
-    font-size: 0.875rem;
+    color:${({ theme }) => theme.color.black};
   }
   button {
     text-transform: uppercase;

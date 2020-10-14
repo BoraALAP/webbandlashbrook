@@ -33,6 +33,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Raleway:100,200,300,400']
+        }
+      }
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: process.env.SANITY_PROJECT_ID,

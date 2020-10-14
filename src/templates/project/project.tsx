@@ -31,16 +31,15 @@ const Project: FunctionComponent<{
       <ImgS fluid={data.sanityProject.mainImage.asset.fluid} />
       <InnerContent move={-50}>
         <PageTitle>{data.sanityProject.title}</PageTitle>
-        <div>
+        
           <Row>
             <h6>Architect:</h6>
             <span>{data.sanityProject.architect}</span>
-          </Row>
-          <Row>
+     
             <h6>Photographer:</h6>
             <span>{data.sanityProject.photographer}</span>
           </Row>
-        </div>
+        
       </InnerContent>
       <Container>
         <Images>
@@ -139,10 +138,11 @@ const GoBack = styled.div`
 
 const Row = styled.div`
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: auto auto;
   justify-content: start;
   align-items: center;
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
+
   h6 {
     font-size: 0.875rem;
   }
