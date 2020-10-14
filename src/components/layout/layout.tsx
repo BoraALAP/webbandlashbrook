@@ -7,14 +7,17 @@
 
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
-import Header from "../header/header"
-import IconEmail from "../icons/icon-email"
-import IconGithub from "../icons/icon-github"
-import IconTwitter from "../icons/icon-twitter"
-import "./layout.scss"
+import React, { useState } from "react"
+import styled, { ThemeProvider } from "styled-components"
+import Header from "../global/header"
+import Footer from "../global/footer"
+import SEO from "../seo"
 
-const Layout = ({ children }) => {
+import { primaryTheme, secondaryTheme } from "../../styles/theme"
+import GlobalStyle from "../../styles/global"
+
+const Layout = ({ children, title, description }) => {
+  const [mode, setMode] = useState(true)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,22 +27,24 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  
   return (
-    <>
+    <ThemeProvider theme={mode ? primaryTheme : secondaryTheme}>
+      <GlobalStyle />
+      <SEO title={title} description={description}/>
       <Header />
-      <div className="main-content-container">
-        <main>{children}</main>
-        <footer>
-          <a href="https://twitter.com/jacobneterer" target="_blank" className="twitter-icon-container" ><IconTwitter /></a>
-          <a href="https://github.com/jneterer" target="_blank" ><IconGithub /></a>
-          <a href="mailto:jacobrneterer@gmail.com" ><IconEmail /></a>
-          <h2>Built by <a href="https://jacobneterer.com" target="_blank">Jacob Neterer</a></h2>
-        </footer>
-      </div>
-    </>
+      <Content>
+        {children}
+      </Content>
+      <Footer />
+    </ThemeProvider>
   )
 }
+
+const Content = styled.main`
+  display: grid;
+
+`
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

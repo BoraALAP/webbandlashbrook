@@ -9,11 +9,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-transition-link`,
     {	
       resolve: `gatsby-source-filesystem`,	
       options: {	
         name: `images`,	
-        path: `${__dirname}/src/images`,	
+        path: `${__dirname}/src/components/assets/images`,	
       },
     },
     `gatsby-transformer-sharp`,
@@ -27,7 +29,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/jn.png`
+        icon: `src/components/assets/images/jn.png`
       },
     },
     {

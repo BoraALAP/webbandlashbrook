@@ -4,8 +4,8 @@ export interface IProject {
   _id: string;
   title: string;
   description: string;
-  githubUrl: string;
-  siteUrl: string;
+  // githubUrl: string;
+  // siteUrl: string;
   _rawBody: {
     _key: string;
     _type: string;
@@ -25,7 +25,26 @@ export interface IProject {
       };
     };
   };
+  architect: string;
+    photographer: string;
+  imagesGallery: {
+    asset: {
+      _id: string;
+      childImageSharp: {
+        fluid: {
+          base64: string;
+          aspectRatio: number;
+          src: string;
+          srcSet: string;
+          srcWebp: string;
+          srcSetWebp: string;
+          sizes: string;
+        };
+      }
+    }
+  };
   slug: {
     current: string;
   };
+  
 }

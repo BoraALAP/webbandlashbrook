@@ -3,7 +3,7 @@ import { IProject } from "../../contracts/projects/project/iproject";
 import { ITag } from "../../contracts/tags/tag/itag";
 import { GetAllProjects } from "../../hooks/projects/get-projects-graphql";
 import { GetTagsGraphql } from "../../hooks/tags/get-tags-graphql";
-import "./projects-section.scss";
+
 import Projects from "./projects/projects";
 import Tags from "./tags/tags";
 

@@ -4,7 +4,7 @@ import React, { FunctionComponent } from "react";
 import { IProjectProps } from "../../../../contracts/projects/project/iproject-props";
 import { ITag } from "../../../../contracts/tags/tag/itag";
 import Tag from "../../tags/tag/tag";
-import "./project.scss";
+
 
 const Project: FunctionComponent<IProjectProps> = ({ project }) => {
   return <Link className="project-card" to={'/project/' + project.slug.current}>

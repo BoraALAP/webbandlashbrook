@@ -13,15 +13,22 @@ export const GetAllProjects = () => {
             slug {
               current
             }
-            tags {
-              _id
-              title
-            }
+            
+            architect
+    photographer
             mainImage {
               asset {
                 fluid(maxWidth: 1200) {
                   ...GatsbySanityImageFluid
                 }
+              }
+            }
+            imagesGallery {
+              asset {
+                  fluid(maxWidth: 2000) {
+                    ...GatsbySanityImageFluid
+                  }
+                
               }
             }
           }
