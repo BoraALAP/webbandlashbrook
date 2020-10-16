@@ -5,7 +5,7 @@ import TeamCard from "../components/ui/teamCard"
 
 const Team = props => {
   return (
-    <Container>
+    <Container id="team">
       <PageTitle>Meet The Team</PageTitle>
 
       <TeamS>

@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { Instagram } from "react-feather"
+import { Instagram, Menu, X } from "react-feather"
 import { WLlogo, WLLogoExpend } from "../assets/branding/WLlogo"
 
+import Nav from "./nav"
 
 const Header = () => {
   const [expanded, setExpanded] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  
-  
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent)
 
@@ -21,29 +20,27 @@ const Header = () => {
     if (window.scrollY > 100) {
       setScrolled(true)
     } else {
-      setScrolled(false) 
+      setScrolled(false)
     }
   }
 
   return (
-    <HeaderS expanded={expanded} scrolled={scrolled}>
+    <HeaderS scrolled={scrolled}>
       <AniLink paintDrip to="/" hex="#000">
         <Logo>
           {scrolled ? <LogoS color="#fff" /> : <WLLogoExpend color="#000" />}
         </Logo>
       </AniLink>
-      
-        
-        <NavS>
-          <a href="https://www.instagram.com/webbandlashbrook/" target="_blank">
-            <Instagram color={scrolled ? "white" : "black"} size={24} />
-          </a>
-          {/* <Link to="/#projects">Projects</Link> */}
-        </NavS>
-        {/* <MobileIcon onClick={() => setExpanded(!expanded)}>
-        <IconMenu />
-      </MobileIcon> */}
-      
+      <NavItemS expanded={expanded}>
+        <Nav scrolled={scrolled}/>
+      </NavItemS>
+      <MobileIcon onClick={() => setExpanded(!expanded)}>
+        {expanded ? <X color="#fff" /> : <Menu color="#fff" />}
+      </MobileIcon>
+      <InstagramS href="https://www.instagram.com/webbandlashbrook/" target="_blank">
+        <Instagram color={scrolled ? "white" : "black"} size={24} />
+      </InstagramS>
+      {/* <Link to="/#projects">Projects</Link> */}
     </HeaderS>
   )
 }
@@ -54,20 +51,28 @@ const HeaderS = styled.header`
   background-color: ${props =>
     props.scrolled ? props.theme.color.black : "transparent"};
   z-index: 1000;
-  justify-content: start;
   align-content: center;
   padding: ${({ theme }) => theme.pagePaddingH};
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   position: fixed;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   transition: all 0.75s ease-in-out;
+  grid-template-areas: "logo menuIcon instagram" 
+                      "menu menu menu";
+                     
+  @media screen and (min-width: 768px) {
+    grid-template-areas: "logo menu instagram";
+    grid-template-columns: 1fr auto 1fr;
+    justify-content: space-evenly;
+    }
 `
 
 const Logo = styled.div`
-  display: grid;
+  display: grid; 
   justify-content: start;
+  grid-area: logo;
 `
 
 const LogoS = styled(WLlogo)`
@@ -75,12 +80,41 @@ const LogoS = styled(WLlogo)`
   height: 80px;
 `
 
-
-
-const NavS = styled.nav`
+const InstagramS = styled.a`
   display: grid;
-  grid-gap: 1em;
-  grid-auto-flow: column;
+  grid-area: instagram;
+  justify-items: end;
+`
+
+const MobileIcon = styled.div`
+  display: grid;
+  justify-content:center;
+  grid-area: menuIcon;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`
+const NavItemS = styled.div`
+    grid-area: menu;
+  display: grid;
+  transition: all 0.75s ease-in-out;
+  position: absolute;
+  background: ${({ theme }) => theme.color.black};
+  width: 100%; 
+
+  padding: ${props =>
+    props.expanded ? "2rem 0": "0rem 0rem"};
+  top: ${props =>
+    props.expanded ? "60px" : " -100vh"};
+
+
+    @media screen and (min-width: 768px) {
+        position: initial;
+        background: transparent;
+        width: auto;
+        padding: 0px;
+        top: inherit;
+      }
 `
 
 export default Header

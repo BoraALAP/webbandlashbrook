@@ -5,6 +5,7 @@ import PageTitle from "../components/ui/element/pageTitle"
 
 const Contact = props => {
   return (
+    <div id="contact">
     <InnerContent move={-50}>
       <PageTitle>Contact</PageTitle>
       <One>
@@ -30,6 +31,7 @@ const Contact = props => {
         </p>
       </Two>
     </InnerContent>
+    </div>
   )
 }
 

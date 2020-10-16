@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Webb and Lashbrook`,
     description: `Your dream home and an architect’s vision meet in the hands of the tradesperson. Our unique expertise in complex contemporary renovation and building is rooted in respect for architecture, design and true partnership with our clients.`,
-    author: `@boraalap`,
+    author: `@artticfox`,
   },
   plugins: [
     `gatsby-plugin-typescript`,

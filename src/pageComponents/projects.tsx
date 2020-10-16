@@ -10,7 +10,7 @@ const Projects = props => {
 
 
   return (
-    <Container>
+    <Container id="projects">
       {/* <ProjectsSection /> */}
       {/* <ResponsiveMasonry
                 columnsCountBreakPoints={{375: 1, 768: 2, 900: 3}}

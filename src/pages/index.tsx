@@ -38,6 +38,7 @@ const IndexPage = ({
         personOne={personOne.childImageSharp.fluid}
         personTwo={personTwo.childImageSharp.fluid}
         personThree={personThree.childImageSharp.fluid}
+       
       />
       <Founders
         personFour={personFour.childImageSharp.fluid}

@@ -5,10 +5,10 @@ import InnerContent from "../components/ui/element/innerContent"
 
 const Enterence = props => {
   return (
-    <Container>
-      <Content>
+    <Container id="enterence">
+      <Content >
         <Left>
-          <h5>
+          <h5 >
             Your dream home and an architect’s vision meet in the hands of the
             tradesperson. Our unique expertise in complex contemporary
             renovation and building is rooted in respect for architecture,
@@ -30,11 +30,15 @@ const Enterence = props => {
 
 const Container = styled.section`
   display: grid;
-  top: -50px;
+  top: -100px;
   z-index: 100;
+  margin-bottom: -100px;
+  padding-top: 50px;
   position: relative;
   @media screen and (min-width: 768px) {
-    top: -100px;
+    top: -200px;
+    padding-top: 100px;
+    margin-bottom: -200px;
   }
 `
 
@@ -87,9 +91,9 @@ const BgContainer = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   z-index: 300;
   width: 100%;
-  height: 100%;
+  height: 50%;
   position: absolute;
-  top: 100px;
+  top: 200px;
 `
 
 const Bg = styled.div`

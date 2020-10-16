@@ -5,6 +5,8 @@ import PageTitle from "../components/ui/element/pageTitle"
 
 const Focused = () => {
   return (
+    <div id="about">
+
     <InnerContent move={50}>
       <PageTitle>Focused on the details</PageTitle>
       <h5>
@@ -15,6 +17,7 @@ const Focused = () => {
         management, budgeting, and scheduling processes.
       </h5>
     </InnerContent>
+    </div>
   )
 }
 
