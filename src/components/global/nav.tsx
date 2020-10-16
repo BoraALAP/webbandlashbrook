@@ -3,14 +3,14 @@ import styled from "styled-components"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import { NavLink } from "../ui/button"
 
-const Nav = ({scrolled}) => {
+const Nav = ({scrolled,onClick}) => {
   return (
-    <Container scrolled={scrolled}>
-      <NavLink onClick={() => scrollTo("#enterence")}>Home</NavLink>
-      <NavLink onClick={() => scrollTo("#projects")}>Projects</NavLink>
-      <NavLink onClick={() => scrollTo("#about")}>About</NavLink>
-      <NavLink onClick={() => scrollTo("#team")}>Team</NavLink>
-      <NavLink onClick={() => scrollTo("#contact")}>Contact</NavLink>
+    <Container scrolled={scrolled} onClick={onClick}>
+      <NavLink onClick={() => {scrollTo("#enterence")}}>Home</NavLink>
+      <NavLink onClick={() => {scrollTo("#projects")}}>Projects</NavLink>
+      <NavLink onClick={() => {scrollTo("#about")}}>About</NavLink>
+      <NavLink onClick={() => {scrollTo("#team")}}>Team</NavLink>
+      <NavLink onClick={() => {scrollTo("#contact")}}>Contact</NavLink>
     </Container>
   )
 }

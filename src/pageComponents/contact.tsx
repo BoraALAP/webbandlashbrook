@@ -5,8 +5,8 @@ import PageTitle from "../components/ui/element/pageTitle"
 
 const Contact = props => {
   return (
-    <div id="contact">
-    <InnerContent move={-50}>
+    <Container id="contact">
+    <InnerContent move={100}>
       <PageTitle>Contact</PageTitle>
       <One>
         <Left>
@@ -31,9 +31,20 @@ const Contact = props => {
         </p>
       </Two>
     </InnerContent>
-    </div>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  display: grid;
+  margin-top: -150px;
+  margin-bottom: 150px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: -300px;
+    margin-bottom: 300px;
+    }
+`
 
 const One = styled.div`
   display: grid;

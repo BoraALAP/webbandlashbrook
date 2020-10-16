@@ -44,10 +44,11 @@ const Projects = props => {
   )
 }
 
-const Container = styled.div`
-  padding: 5vw;
+const Container = styled.section`
+  padding: 150px 5vw 0px;
   display: grid;
   grid-gap: 2.5rem;
+
   
   a {
     text-decoration: none;

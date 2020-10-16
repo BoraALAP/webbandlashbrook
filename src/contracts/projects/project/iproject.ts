@@ -3,6 +3,7 @@ import { ITag } from "../../tags/tag/itag";
 export interface IProject {
   _id: string;
   title: string;
+  subDetail: string;
   description: string;
   // githubUrl: string;
   // siteUrl: string;

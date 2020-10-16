@@ -20,6 +20,7 @@ const Project: FunctionComponent<{
   )
 
 
+  console.log(data);
   
   
 
@@ -28,10 +29,10 @@ const Project: FunctionComponent<{
       title={data.sanityProject.title}
       description={data.sanityProject.description}
     >
-      <ImgS fluid={data.sanityProject.mainImage.asset.fluid} />
+      <ImgS fluid={data.sanityProject.mainImage.asset.fluid} alt={`${data.sanityProject.title}-${data.sanityProject.subDetail}-${data.sanityProject.photographer}`} />
       <InnerContent move={-50}>
         <PageTitle>{data.sanityProject.title}</PageTitle>
-        
+        <h5>{data.sanityProject.subDetail}</h5>
           <Row>
             <h6>Architect:</h6>
             <span>{data.sanityProject.architect}</span>
@@ -43,12 +44,13 @@ const Project: FunctionComponent<{
       </InnerContent>
       <Container>
         <Images>
-          {data.sanityProject.imagesGallery.map(image => {
+          {data.sanityProject.imagesGallery.map((image, index) => {
             return (
               <ImgC
                 fluid={image.asset.fluid}
                 ratio={image.asset.fluid.aspectRatio}
                 key={image.asset._id}
+                alt={`${data.sanityProject.title}-${data.sanityProject.photographer}-${index}`}
               />
             )
           })}
@@ -200,6 +202,7 @@ export const pageQuery = graphql`
     sanityProject(id: { eq: $id }) {
       _id
       title
+      subDetail
       description
       architect
       photographer
@@ -221,7 +224,7 @@ export const pageQuery = graphql`
       imagesGallery {
         asset {
           _id
-          fluid(maxWidth: 2000) {
+          fluid(maxWidth: 1600) {
             ...GatsbySanityImageFluid
           }
         }

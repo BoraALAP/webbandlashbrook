@@ -24,6 +24,10 @@ const Header = () => {
     }
   }
 
+  const handleNav = () => {
+    setExpanded(false)
+  }
+
   return (
     <HeaderS scrolled={scrolled}>
       <AniLink paintDrip to="/" hex="#000">
@@ -32,10 +36,10 @@ const Header = () => {
         </Logo>
       </AniLink>
       <NavItemS expanded={expanded}>
-        <Nav scrolled={scrolled}/>
+        <Nav scrolled={scrolled} onClick={handleNav}/>
       </NavItemS>
       <MobileIcon onClick={() => setExpanded(!expanded)}>
-        {expanded ? <X color="#fff" /> : <Menu color="#fff" />}
+        {expanded ? <X color={ scrolled ? "#fff": "#000" } /> : <Menu color={ scrolled ? "#fff": "#000" } />}
       </MobileIcon>
       <InstagramS href="https://www.instagram.com/webbandlashbrook/" target="_blank">
         <Instagram color={scrolled ? "white" : "black"} size={24} />
@@ -56,6 +60,7 @@ const HeaderS = styled.header`
   grid-template-columns: auto auto auto;
   position: fixed;
   justify-content: space-between;
+  transition: all 0.75s ease-in-out;
   align-items: center;
   box-sizing: border-box;
   transition: all 0.75s ease-in-out;
