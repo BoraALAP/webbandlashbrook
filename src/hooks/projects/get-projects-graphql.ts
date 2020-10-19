@@ -4,8 +4,8 @@ import { IGetProjectsResponse } from "../../contracts/projects/iget-projects-res
 export const GetAllProjects = () => {
   const projects: IGetProjectsResponse = useStaticQuery(
     graphql`
-      query {
-        allSanityProject {
+      query{
+        allSanityProject(limit: 7, sort: {order: DESC, fields: _createdAt} ) {
           nodes {
             _id
             title
@@ -18,14 +18,14 @@ export const GetAllProjects = () => {
     photographer
             mainImage {
               asset {
-                fluid(maxWidth: 1200) {
+                fluid(maxWidth: 2000) {
                   ...GatsbySanityImageFluid
                 }
               }
             }
             imagesGallery {
               asset {
-                  fluid(maxWidth: 2000) {
+                  fluid(maxWidth: 1200) {
                     ...GatsbySanityImageFluid
                   }
                 

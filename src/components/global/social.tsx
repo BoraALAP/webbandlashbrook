@@ -1,15 +1,18 @@
 import React from "react"
 import styled from "styled-components"
-import { Instagram, Facebook } from "react-feather"
+import { Instagram, Facebook, Linkedin } from "react-feather"
 
-const Social = props => {
+const Social = ({color= "white"}) => {
   return (
     <Container>
       <a href="https://www.instagram.com/webbandlashbrook/" target="_blank">
-        <Instagram color="white" size={24} />
+        <Instagram color={color} size={24} />
       </a>
       <a href="https://www.facebook.com/webbandlashbrook/" target="_blank">
-        <Facebook color="white" size={24} />
+        <Facebook color={color} size={24} />
+      </a>
+      <a href="https://www.linkedin.com/company/webb-&-lashbrook/about/" target="_blank">
+        <Linkedin color={color} size={24} />
       </a>
     </Container>
   )
@@ -20,7 +23,7 @@ const Container = styled.div`
   grid-auto-flow: column;
   grid-gap: 1rem;
   justify-items: center;
-  justify-content: space-between;
+  justify-content: end;
 `
 
 export default Social

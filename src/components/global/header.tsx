@@ -5,6 +5,7 @@ import { Instagram, Menu, X } from "react-feather"
 import { WLlogo, WLLogoExpend } from "../assets/branding/WLlogo"
 
 import Nav from "./nav"
+import Social from "./social"
 
 const Header = () => {
   const [expanded, setExpanded] = useState(false)
@@ -32,7 +33,7 @@ const Header = () => {
     <HeaderS scrolled={scrolled}>
       <AniLink paintDrip to="/" hex="#000">
         <Logo>
-          {scrolled ? <LogoS color="#fff" /> : <WLLogoExpend color="#000" />}
+          {scrolled ? <LogoS color="#fff" size="40px" /> : <WLLogoExpend color="#000" />}
         </Logo>
       </AniLink>
       <NavItemS expanded={expanded}>
@@ -41,9 +42,7 @@ const Header = () => {
       <MobileIcon onClick={() => setExpanded(!expanded)}>
         {expanded ? <X color={ scrolled ? "#fff": "#000" } /> : <Menu color={ scrolled ? "#fff": "#000" } />}
       </MobileIcon>
-      <InstagramS href="https://www.instagram.com/webbandlashbrook/" target="_blank">
-        <Instagram color={scrolled ? "white" : "black"} size={24} />
-      </InstagramS>
+      <Social color={scrolled ? "#fff" : "#000" }/>
       {/* <Link to="/#projects">Projects</Link> */}
     </HeaderS>
   )

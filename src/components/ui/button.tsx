@@ -16,7 +16,7 @@ padding: 1rem 2rem;
 const NavLinkS = styled.button`
   display: grid;
   color: ${({ theme }) => theme.color.white};
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   padding: 1rem 1.5rem;
   @media screen and (min-width: 768px) {
   padding: 0.5rem 1.5rem;

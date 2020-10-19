@@ -15,54 +15,57 @@ import { Button } from "../../components/ui/button"
 const Project: FunctionComponent<{
   data: { sanityProject: IProject; allSanityProject }
 }> = ({ data }) => {
+
+  const { title, description, mainImage, subDetail, architect, photographer,imagesGallery, _id } = data.sanityProject
+
+
   const thisEdge = data.allSanityProject.edges.find(
-    edge => edge.node._id === data.sanityProject._id
-  )
-
-
-  console.log(data);
-  
-  
+    edge => edge.node._id === _id
+  )  
 
   return (
     <Layout
-      title={data.sanityProject.title}
-      description={data.sanityProject.description}
+      title={title}
+      description={description}
     >
-      <ImgS fluid={data.sanityProject.mainImage.asset.fluid} alt={`${data.sanityProject.title}-${data.sanityProject.subDetail}-${data.sanityProject.photographer}`} />
+      <ImgS fluid={mainImage?.asset?.fluid} alt={`${title}-${subDetail}-${photographer}`} />
       <InnerContent move={-50}>
-        <PageTitle>{data.sanityProject.title}</PageTitle>
-        <h5>{data.sanityProject.subDetail}</h5>
+        <PageTitle>{title}</PageTitle>
+        {subDetail && <h5>{subDetail}</h5>}
           <Row>
-            <h6>Architect:</h6>
-            <span>{data.sanityProject.architect}</span>
-     
-            <h6>Photographer:</h6>
-            <span>{data.sanityProject.photographer}</span>
+            {architect && (<><h6>Architect:</h6>
+              <span>{architect}</span></>)
+
+            }
+     {photographer && (<><h6>Photographer:</h6>
+              <span>{photographer}</span></>)
+
+            }
+        
           </Row>
         
       </InnerContent>
       <Container>
-        <Images>
-          {data.sanityProject.imagesGallery.map((image, index) => {
+        {imagesGallery.length > 0 && (<Images>
+          {imagesGallery?.map((image, index) => {
             return (
               <ImgC
                 fluid={image.asset.fluid}
                 ratio={image.asset.fluid.aspectRatio}
                 key={image.asset._id}
-                alt={`${data.sanityProject.title}-${data.sanityProject.photographer}-${index}`}
+                alt={`${title}-${photographer}-${index}`}
               />
             )
           })}
-        </Images>
+        </Images>)}
         {/* <div >
           <p >Description</p>
-          <p >{data.sanityProject.description}</p>
+          <p >{description}</p>
         </div> */}
 
         {/* <div >
           <div>
-            <BlockContent blocks={data.sanityProject._rawBody} />
+            <BlockContent blocks={_rawBody} />
           </div>
         </div> */}
         {

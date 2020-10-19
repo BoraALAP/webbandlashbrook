@@ -12,12 +12,9 @@ const Footer = props => {
       <AniLink paintDrip to="/" hex="#000">
         <WLlogo color="#fff" size="100px" />
         </AniLink>
-        {/* <Nav /> */}
-        <Social />
-      </Top>
-      <Bottom>
         <Legal>Ⓒ {new Date().getFullYear()} Webb and Lashbrook Inc.</Legal>
-      </Bottom>
+      </Top>
+
     </Container>
   )
 }
@@ -47,10 +44,6 @@ const Top = styled.div`
     grid-auto-flow:column;
     grid-gap: 1rem;
   }
-`
-
-const Bottom = styled.div`
-  display: grid;
 `
 
 const Legal = styled.small`

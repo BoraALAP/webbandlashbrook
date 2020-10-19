@@ -7,6 +7,7 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "subDetail",
@@ -21,6 +22,7 @@ export default {
         source: "title",
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "description",
@@ -60,12 +62,14 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "imagesGallery",
       title: "Images gallery",
       type: "array",
       of: [{ type: "image" }],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "tags",
