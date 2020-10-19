@@ -33,7 +33,7 @@ const IndexPage = ({
       <Enterence />
       <Projects />
       <Focused />
-      <FullImage featuredImage={contact.childImageSharp.fluid} />
+      <FullImage featuredImage={focused.childImageSharp.fluid} />
       <Team
         personOne={personOne.childImageSharp.fluid}
         personTwo={personTwo.childImageSharp.fluid}
@@ -45,7 +45,7 @@ const IndexPage = ({
         personFive={personFive.childImageSharp.fluid}
       />
       <Crew team={team.childImageSharp.fluid} />
-      <FullImage featuredImage={focused.childImageSharp.fluid} />
+      <FullImage featuredImage={contact.childImageSharp.fluid} />
       <Contact />
     </Layout>
   )

@@ -12,9 +12,9 @@ const Contact = props => {
         <Left>
           Webb and Lashbrook Inc.
           <br />
-          585 O’Connor Drive
+          9 Barbara Crescent
           <br />
-          Toronto, ON M4C 2Z9
+          East York, ON M4C 3B1
         </Left>
         <Right>
           <a href="tel:4168024272">416 802 4272</a>

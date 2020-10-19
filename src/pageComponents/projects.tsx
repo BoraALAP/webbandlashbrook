@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import Anilink from "gatsby-plugin-transition-link/AniLink"
 import { GetAllProjects } from "../hooks/projects/get-projects-graphql"
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import PageTitle from "../components/ui/element/pageTitle"
 
 const Projects = props => {
   const { allSanityProject } = GetAllProjects()
@@ -11,11 +11,13 @@ const Projects = props => {
 
   return (
     <Container id="projects">
+     <PageTitle>Projects</PageTitle>
       {/* <ProjectsSection /> */}
       {/* <ResponsiveMasonry
                 columnsCountBreakPoints={{375: 1, 768: 2, 900: 3}}
             >
                 <Masonry gutter={'2rem'}> */}
+      <Content>
 
       {allSanityProject &&
         allSanityProject.nodes.map((node,index) => {
@@ -38,14 +40,21 @@ const Projects = props => {
             </Anilink>
           )
         })}
-      {/* </Masonry>
-    </ResponsiveMasonry> */}
+      </Content>
+
     </Container>
   )
 }
 
 const Container = styled.section`
-  padding: 150px 5vw 0px;
+  padding: 3rem 5vw 0px;
+  display: grid;
+  grid-gap: 2.5rem;
+  
+
+`
+
+const Content = styled.div`
   display: grid;
   grid-gap: 2.5rem;
 
@@ -60,6 +69,7 @@ const Container = styled.section`
   }
 
   #d0{
+
     @media screen and (min-width: 768px) {
       
       grid-column: span 2;
@@ -86,7 +96,6 @@ const Container = styled.section`
       grid-column: span 2;
       }
   }
-
 `
 
 const ImgC = styled(Img)`

@@ -74,9 +74,9 @@ h6{
 }
 
 p{
-  font-weight: 200;
+  font-weight: 300;
   line-height: 2rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: ${({ theme }) => theme.color.grey};
   margin: 0;
 }
