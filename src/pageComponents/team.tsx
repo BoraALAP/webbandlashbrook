@@ -50,7 +50,10 @@ const Team = props => {
 const Container = styled.section`
   display: grid;
   grid-gap: 2.5rem;
-  padding: 10vh 10vw;
+  @media screen and (min-width: 768px) {
+  padding: 10rem 10vw;
+    }
+    padding: 7rem 10vw;
 `
 
 const TeamS = styled.div`

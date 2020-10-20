@@ -30,10 +30,10 @@ const Enterence = props => {
 
 const Container = styled.section`
   display: grid;
-  top: -100px;
+  top: -150px;
   z-index: 100;
-  margin-bottom: -150px;
-  padding-top: 50px;
+  margin-bottom: -200px;
+  padding-top: 100px;
   position: relative;
   @media screen and (min-width: 768px) {
     top: -200px;
