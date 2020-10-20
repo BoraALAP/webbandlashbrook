@@ -47,7 +47,7 @@ const Projects = props => {
 }
 
 const Container = styled.section`
-  padding: 3rem 5vw 0px;
+  padding: 9rem 5vw 0px;
   display: grid;
   grid-gap: 2.5rem;
   

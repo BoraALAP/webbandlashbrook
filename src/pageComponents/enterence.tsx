@@ -32,13 +32,13 @@ const Container = styled.section`
   display: grid;
   top: -100px;
   z-index: 100;
-  margin-bottom: -100px;
+  margin-bottom: -150px;
   padding-top: 50px;
   position: relative;
   @media screen and (min-width: 768px) {
     top: -200px;
     padding-top: 100px;
-    margin-bottom: -200px;
+    margin-bottom: -300px;
   }
 `
 
