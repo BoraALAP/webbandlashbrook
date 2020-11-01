@@ -44,7 +44,7 @@ const IndexPage = ({
         personFour={personFour.childImageSharp.fluid}
         personFive={personFive.childImageSharp.fluid}
       />
-      <Crew team={team.childImageSharp.fluid} />
+      {/* <Crew team={team.childImageSharp.fluid} /> */}
       <FullImage featuredImage={contact.childImageSharp.fluid} />
       <Contact />
     </Layout>

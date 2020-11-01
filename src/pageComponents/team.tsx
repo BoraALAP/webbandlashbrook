@@ -14,33 +14,44 @@ const Team = props => {
           title="President"
           featuredImage={props.personOne}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
-          purus sed odio vestibulum efficitur. Integer id ligula faucibus,
-          accumsan lectus vitae, dignissim elit. Cras at volutpat eros, ut
-          iaculis quam. Aenean non scelerisque orci, porta tempor nulla. Nulla
-          justo lectus, elementum non est in, eleifend accumsan nibh.
+          Nyousha’s university education in chemical engineering grounds him in
+          systems, quality control and complex problem solving. His subsequent
+          George Brown College education in construction management and his
+          extensive hands-on experience in construction renovation give him a
+          clear understanding of how materials, structures, systems and
+          processes interconnect. His solid work ethic, ability to troubleshoot,
+          problem solve and execute solutions makes him an ideal leader for
+          complex renovation and construction projects.
         </TeamCard>
         <TeamCard
           name="Grace Zeren"
           title="Project Manager"
           featuredImage={props.personTwo}
         >
-          Quisque tempor purus vitae neque tempus, at pellentesque justo
-          convallis. Suspendisse nec blandit massa. Sed velit molestie, aliquam
-          quam sit amet, tempus eros. Curabi elementum mi non velit bibendum,
-          nec placerat nunc feugiat. Sed sed leo tellus. Donec ac justo mauris.
-          Aliquam accumsan sed risus et vulputate.
+          With over 10 years of marketing and project management experience,
+          Grace is overseeing corporate communications and marketing, project
+          coordination, client and employee relations and industry
+          communication. As part of the management team, Grace oversees
+          important aspects of the building process by staying in close
+          communication with all key stakeholders including clients, trades and
+          architects. In addition to her Marketing degree from George Brown
+          College, she also holds a Bachelor of Science Degree in Biology and
+          maintains an active Real Estate license.
         </TeamCard>
         <TeamCard
           name="Kiyomi Lashbrook"
           title="Administrator"
           featuredImage={props.personThree}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
-          purus sed odio vestibulum efficitur. Integer id ligula faucibus,
-          accumsan lectus vitae, dignissim elit. Cras at volutpat eros, ut
-          iaculis quam. Aenean non scelerisque orci, porta tempor nulla. Nulla
-          justo lectus, elementum non est in, eleifend accumsan nibh.
+          Kiyomi has been with the company for over 10 years. She began her
+          career “working the tools” on construction sites and then moved into a
+          combination of accounting, project management, executive assistant and
+          office management roles. As an experienced member of the team and with
+          a solid understanding of building systems and material procurement,
+          she adds great value and insight to the company’s successful project
+          coordination and execution. She holds a Psychology Degree from
+          McMaster University and adds to her knowledge base regularly through
+          Construction Management courses at George Brown College.
         </TeamCard>
       </TeamS>
     </Container>
@@ -51,9 +62,9 @@ const Container = styled.section`
   display: grid;
   grid-gap: 2.5rem;
   @media screen and (min-width: 768px) {
-  padding: 10rem 10vw;
-    }
-    padding: 7rem 10vw;
+    padding: 10rem 10vw;
+  }
+  padding: 7rem 10vw;
 `
 
 const TeamS = styled.div`
@@ -63,8 +74,7 @@ const TeamS = styled.div`
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
     grid-template-columns: repeat(3, 1fr);
-      
-    }
+  }
 `
 
 export default Team
