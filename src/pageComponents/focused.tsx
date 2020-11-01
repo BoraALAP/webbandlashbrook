@@ -10,7 +10,7 @@ const Focused = () => {
     <InnerContent move={50}>
       <PageTitle>Focused on the details</PageTitle>
       <h5>
-        Webb and Lashbrook is a Toronto-based construction firm specializing in
+        Webb &amp; Lashbrook is a Toronto-based construction firm specializing in
         residential architecture. Working with architects, designers, and
         residential clients, our aptitude for constructing modern details in
         both new builds and renovation projects is underpinned by our sound team

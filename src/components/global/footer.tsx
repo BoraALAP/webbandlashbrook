@@ -12,7 +12,7 @@ const Footer = props => {
       <AniLink paintDrip to="/" hex="#000">
         <WLlogo color="#fff" size="100px" />
         </AniLink>
-        <Legal>Ⓒ {new Date().getFullYear()} Webb and Lashbrook Inc.</Legal>
+        <Legal>Ⓒ {new Date().getFullYear()} Webb &amp; Lashbrook Inc.</Legal>
       </Top>
 
     </Container>

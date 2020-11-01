@@ -10,7 +10,7 @@ const Enterence = props => {
         <Left>
           <h5 >
             Your dream home and an architect’s vision meet in the hands of the
-            tradesperson. Our unique expertise in complex contemporary
+            on-site project management team. Our unique expertise in complex contemporary
             renovation and building is rooted in respect for architecture,
             design and true partnership with our clients.
           </h5>

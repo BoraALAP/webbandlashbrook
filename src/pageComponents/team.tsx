@@ -25,7 +25,7 @@ const Team = props => {
         </TeamCard>
         <TeamCard
           name="Grace Zeren"
-          title="Project Manager"
+          title="Director of Marketing &amp; Project Management"
           featuredImage={props.personTwo}
         >
           With over 10 years of marketing and project management experience,
@@ -40,7 +40,7 @@ const Team = props => {
         </TeamCard>
         <TeamCard
           name="Kiyomi Lashbrook"
-          title="Administrator"
+          title="Office Manager"
           featuredImage={props.personThree}
         >
           Kiyomi has been with the company for over 10 years. She began her

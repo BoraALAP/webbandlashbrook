@@ -10,7 +10,7 @@ const Contact = props => {
       <PageTitle>Contact</PageTitle>
       <One>
         <Left>
-          Webb and Lashbrook Inc.
+          Webb &amp; Lashbrook Inc.
           <br />
           9 Barbara Crescent
           <br />
