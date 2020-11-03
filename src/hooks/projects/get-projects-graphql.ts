@@ -5,7 +5,7 @@ export const GetAllProjects = () => {
   const projects: IGetProjectsResponse = useStaticQuery(
     graphql`
       query{
-        allSanityProject(limit: 7, sort: {order: DESC, fields: _createdAt} ) {
+        allSanityProject(limit: 8, sort: {order: DESC, fields: _createdAt} ) {
           nodes {
             _id
             title

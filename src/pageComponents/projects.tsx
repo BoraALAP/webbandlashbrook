@@ -12,11 +12,6 @@ const Projects = props => {
   return (
     <Container id="projects">
      <PageTitle>Projects</PageTitle>
-      {/* <ProjectsSection /> */}
-      {/* <ResponsiveMasonry
-                columnsCountBreakPoints={{375: 1, 768: 2, 900: 3}}
-            >
-                <Masonry gutter={'2rem'}> */}
       <Content>
 
       {allSanityProject &&
@@ -100,17 +95,25 @@ const Content = styled.div`
       grid-column: span 2;
       }
   }
+  #d7{
+    @media screen and (min-width: 768px) {
+        
+      grid-column: span 3;
+      }
+  }
 `
 
 const ImgC = styled.div`
   display: grid;
   /* max-height: 300px; */
   background-image:url(${props => props.fluid});
-  min-height: 400px;
+  
+  height: 400px;
     background-size: cover;
     background-position: center center;
-  @media screen and (max-width: 768px) {
-    height: 300px;
+  @media screen and (min-width: 768px) {
+    min-height: 500px;
+    height: auto;
   }
 `
 
