@@ -39,7 +39,7 @@ const IndexPage = ({
         personTwo={personTwo.childImageSharp.fluid}
         personThree={personThree.childImageSharp.fluid}
        
-      />
+      /> 
       <Founders
         personFour={personFour.childImageSharp.fluid}
         personFive={personFive.childImageSharp.fluid}
@@ -90,10 +90,10 @@ export const IndexQuery = graphql`
         }
       }
     }
-    personThree: file(relativePath: { eq: "personThree.png" }) {
+    personThree: file(relativePath: { eq: "personThree.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid 
         }
       }
     }

@@ -30,7 +30,7 @@ const Projects = props => {
               id={`d${index}`}
             >
               <CardContainer>
-                <ImgC fluid={node.mainImage.asset.fluid} />
+                <ImgC fluid={node.mainImage.asset.fluid.src} />
                 <Text>
                   <h6>{node.title}</h6>
                   <Divider />
@@ -102,9 +102,13 @@ const Content = styled.div`
   }
 `
 
-const ImgC = styled(Img)`
+const ImgC = styled.div`
   display: grid;
   /* max-height: 300px; */
+  background-image:url(${props => props.fluid});
+  min-height: 400px;
+    background-size: cover;
+    background-position: center center;
   @media screen and (max-width: 768px) {
     height: 300px;
   }
