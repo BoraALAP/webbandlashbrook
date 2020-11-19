@@ -12,7 +12,14 @@ const Footer = props => {
       <AniLink paintDrip to="/" hex="#000">
         <WLlogo color="#fff" size="100px" />
         </AniLink>
-        <Legal>Ⓒ {new Date().getFullYear()} Webb &amp; Lashbrook Inc.</Legal>
+        <Legal>
+          <span>
+            Ⓒ {new Date().getFullYear()} Webb &amp; Lashbrook Inc.<br />
+            </span>
+        <span>
+          Build by <a href="https://www.artticfox.com" rel="noopenner" target="_blank">Arttic Fox</a>
+          </span>
+    </Legal>
       </Top>
 
     </Container>
@@ -52,6 +59,11 @@ const Legal = styled.small`
   font-weight: 300;
   font-size: 0.625rem;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  a{
+    color: ${({ theme }) => theme.color.lightGrey};
+    text-decoration: none;
+  }
 `
 
 export default Footer
