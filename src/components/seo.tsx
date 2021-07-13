@@ -68,7 +68,21 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-SXDRZXGTZL"
+      ></script>
+      <script>
+        {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SXDRZXGTZL');
+  `}
+      </script>
+    </Helmet>
   )
 }
 
