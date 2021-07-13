@@ -16,7 +16,13 @@ import SEO from "../seo"
 import { primaryTheme, secondaryTheme } from "../../styles/theme"
 import GlobalStyle from "../../styles/global"
 
-const Layout = ({ children, title, description }) => {
+interface Props {
+  children?: any
+  title?: string
+  description?: string
+}
+
+const Layout = ({ children, title, description }: Props) => {
   const [mode, setMode] = useState(true)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,15 +33,13 @@ const Layout = ({ children, title, description }) => {
       }
     }
   `)
-  
+
   return (
     <ThemeProvider theme={mode ? primaryTheme : secondaryTheme}>
       <GlobalStyle />
-      <SEO title={title} description={description}/>
+      <SEO title={title} description={description} />
       <Header />
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
       <Footer />
     </ThemeProvider>
   )
@@ -43,7 +47,6 @@ const Layout = ({ children, title, description }) => {
 
 const Content = styled.main`
   display: grid;
-
 `
 
 Layout.propTypes = {

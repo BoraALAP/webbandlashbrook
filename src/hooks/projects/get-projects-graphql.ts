@@ -1,11 +1,11 @@
-import { graphql, useStaticQuery } from "gatsby";
-import { IGetProjectsResponse } from "../../contracts/projects/iget-projects-response";
+import { graphql, useStaticQuery } from "gatsby"
+import { IGetProjectsResponse } from "../../contracts/projects/iget-projects-response"
 
 export const GetAllProjects = () => {
   const projects: IGetProjectsResponse = useStaticQuery(
     graphql`
-      query{
-        allSanityProject(limit: 8, sort: {order: DESC, fields: _createdAt} ) {
+      query {
+        allSanityProject(sort: { order: DESC, fields: _createdAt }) {
           nodes {
             _id
             title
@@ -13,9 +13,9 @@ export const GetAllProjects = () => {
             slug {
               current
             }
-            
+
             architect
-    photographer
+            photographer
             mainImage {
               asset {
                 fluid(maxWidth: 2000) {
@@ -25,10 +25,9 @@ export const GetAllProjects = () => {
             }
             imagesGallery {
               asset {
-                  fluid(maxWidth: 1200) {
-                    ...GatsbySanityImageFluid
-                  }
-                
+                fluid(maxWidth: 1200) {
+                  ...GatsbySanityImageFluid
+                }
               }
             }
           }
@@ -36,5 +35,5 @@ export const GetAllProjects = () => {
       }
     `
   )
-  return projects;
+  return projects
 }
