@@ -6,6 +6,7 @@
   "author": "Jacob Neterer <jacobrneterer@gmail.com",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
+    "framer-motion": "^4.1.17",
     "gatsby": "^2.20.8",
     "gatsby-image": "^2.2.44",
     "gatsby-plugin-google-analytics": "^2.3.18",
