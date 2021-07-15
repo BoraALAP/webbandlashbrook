@@ -18,18 +18,14 @@ export const GetAllProjects = () => {
             photographer
             mainImage {
               asset {
-                fluid(maxWidth: 2000) {
-                  ...GatsbySanityImageFluid
-                }
+                gatsbyImageData(layout: FULL_WIDTH, formats: AUTO)
               }
             }
-            imagesGallery {
-              asset {
-                fluid(maxWidth: 1200) {
-                  ...GatsbySanityImageFluid
-                }
-              }
-            }
+            # imagesGallery {
+            #   asset {
+            #     gatsbyImageData(layout: FULL_WIDTH, formats: AUTO)
+            #   }
+            # }
           }
         }
       }

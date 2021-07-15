@@ -5,6 +5,7 @@ import Anilink from "gatsby-plugin-transition-link/AniLink"
 import { GetAllProjects } from "../hooks/projects/get-projects-graphql"
 import PageTitle from "../components/ui/element/pageTitle"
 import { Button } from "../components/ui/button"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Projects = props => {
   const { allSanityProject } = GetAllProjects()
@@ -31,6 +32,7 @@ const Projects = props => {
       <Content>
         {allSanityProject &&
           list.map((node, index) => {
+            const getMainImage = getImage(node.mainImage.asset)
             return (
               <Anilink
                 to={`/project/${node.slug.current}`}
@@ -43,7 +45,10 @@ const Projects = props => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >
-                  <ImgC fluid={node.mainImage.asset.fluid.src} />
+                  <ImgC
+                    image={getMainImage}
+                    alt={`${node.title}-${node.photographer}`}
+                  />
                   <Text>
                     <h6>{node.title}</h6>
                     <Divider />
@@ -122,10 +127,10 @@ const Content = styled.div`
   }
 `
 
-const ImgC = styled.div`
+const ImgC = styled(GatsbyImage)`
   display: grid;
   /* max-height: 300px; */
-  background-image: url(${props => props.fluid});
+  /* background-image: url(${props => props.fluid}); */
 
   height: 400px;
   background-size: cover;

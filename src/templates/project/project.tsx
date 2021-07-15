@@ -1,6 +1,6 @@
 import BlockContent from "@sanity/block-content-to-react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import React, { FunctionComponent } from "react"
 import Anilink from "gatsby-plugin-transition-link/AniLink"
@@ -15,49 +15,63 @@ import { Button } from "../../components/ui/button"
 const Project: FunctionComponent<{
   data: { sanityProject: IProject; allSanityProject }
 }> = ({ data }) => {
-
-  const { title, description, mainImage, subDetail, architect, photographer,imagesGallery, _id } = data.sanityProject
-
+  const {
+    title,
+    description,
+    mainImage,
+    subDetail,
+    architect,
+    photographer,
+    imagesGallery,
+    _id,
+  } = data.sanityProject
 
   const thisEdge = data.allSanityProject.edges.find(
     edge => edge.node._id === _id
-  )  
+  )
 
+  const getMainImage = getImage(mainImage.asset)
+
+  console.log(imagesGallery)
   return (
-    <Layout
-      title={title}
-      description={description}
-    >
-      <ImgS fluid={mainImage?.asset?.fluid} alt={`${title}-${subDetail}-${photographer}`} />
+    <Layout title={title} description={description}>
+      <ImgS
+        image={getMainImage}
+        alt={`${title}-${subDetail}-${photographer}`}
+      />
       <InnerContent move={-50}>
         <PageTitle>{title}</PageTitle>
         {subDetail && <h5>{subDetail}</h5>}
-          <Row>
-            {architect && (<><h6>Architect:</h6>
-              <span>{architect}</span></>)
-
-            }
-     {photographer && (<><h6>Photographer:</h6>
-              <span>{photographer}</span></>)
-
-            }
-        
-          </Row>
-        
+        <Row>
+          {architect && (
+            <>
+              <h6>Architect:</h6>
+              <span>{architect}</span>
+            </>
+          )}
+          {photographer && (
+            <>
+              <h6>Photographer:</h6>
+              <span>{photographer}</span>
+            </>
+          )}
+        </Row>
       </InnerContent>
       <Container>
-        {imagesGallery.length > 0 && (<Images>
-          {imagesGallery?.map((image, index) => {
-            return (
-              <ImgC
-                fluid={image.asset.fluid}
-                ratio={image.asset.fluid.aspectRatio}
-                key={image.asset._id}
-                alt={`${title}-${photographer}-${index}`}
-              />
-            )
-          })}
-        </Images>)}
+        {imagesGallery.length > 0 && (
+          <Images>
+            {imagesGallery?.map((image, index) => {
+              const eachImage = getImage(image.asset)
+              return (
+                <ImgC
+                  image={eachImage}
+                  key={image.asset._id}
+                  alt={`${title}-${photographer}-${index}`}
+                />
+              )
+            })}
+          </Images>
+        )}
         {/* <div >
           <p >Description</p>
           <p >{description}</p>
@@ -68,8 +82,7 @@ const Project: FunctionComponent<{
             <BlockContent blocks={_rawBody} />
           </div>
         </div> */}
-        {
-         thisEdge && (
+        {thisEdge && (
           <Buttons>
             {thisEdge.previous && thisEdge.previous.slug && (
               <Anilink
@@ -95,7 +108,7 @@ const Project: FunctionComponent<{
         )}
 
         <GoBack>
-          <button onClick={()=> window.history.back()}>
+          <button onClick={() => window.history.back()}>
             <ChevronLeft color={"#000"} />
             Back
           </button>
@@ -110,12 +123,12 @@ const Container = styled.div`
   padding: 0 5vw 5vw;
 `
 
-const ImgS = styled(Img)`
+const ImgS = styled(GatsbyImage)`
   display: grid;
   height: 60vh;
 `
 
-const ImgC = styled(Img)`
+const ImgC = styled(GatsbyImage)`
   display: grid;
 
   @media screen and (min-width: 768px) {
@@ -133,7 +146,6 @@ const GoBack = styled.div`
   top: 90px;
   z-index: 400;
   button {
-    
     display: grid;
     grid-auto-flow: column;
     align-items: center;
@@ -165,8 +177,8 @@ const Buttons = styled.div`
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
-    padding: 2rem;
-    grid-gap: 2rem;
+  padding: 2rem;
+  grid-gap: 2rem;
 `
 
 const Next = styled.div`
@@ -219,17 +231,13 @@ export const pageQuery = graphql`
       }
       mainImage {
         asset {
-          fluid(maxWidth: 2000) {
-            ...GatsbySanityImageFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH, formats: AUTO)
         }
       }
       imagesGallery {
         asset {
           _id
-          fluid(maxWidth: 1600) {
-            ...GatsbySanityImageFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH, formats: AUTO)
         }
       }
     }

@@ -26,26 +26,35 @@ const IndexPage = ({
     team,
   },
 }) => {
+  console.log(enterence)
 
   return (
     <Layout title="Home">
-      <FullImage featuredImage={enterence.childImageSharp.fluid} />
+      <FullImage
+        featuredImage={enterence.childImageSharp.gatsbyImageData}
+        alt={`Kitchen Image`}
+      />
       <Enterence />
       <Projects />
       <Focused />
-      <FullImage featuredImage={focused.childImageSharp.fluid} />
+      <FullImage
+        featuredImage={focused.childImageSharp.gatsbyImageData}
+        alt={`Red Cabinets`}
+      />
       <Team
-        personOne={personOne.childImageSharp.fluid}
-        personTwo={personTwo.childImageSharp.fluid}
-        personThree={personThree.childImageSharp.fluid}
-       
-      /> 
+        personOne={personOne.childImageSharp.gatsbyImageData}
+        personTwo={personTwo.childImageSharp.gatsbyImageData}
+        personThree={personThree.childImageSharp.gatsbyImageData}
+      />
       <Founders
-        personFour={personFour.childImageSharp.fluid}
-        personFive={personFive.childImageSharp.fluid}
+        personFour={personFour.childImageSharp.gatsbyImageData}
+        personFive={personFive.childImageSharp.gatsbyImageData}
       />
       {/* <Crew team={team.childImageSharp.fluid} /> */}
-      <FullImage featuredImage={contact.childImageSharp.fluid} />
+      <FullImage
+        featuredImage={contact.childImageSharp.gatsbyImageData}
+        alt={`Close-up steel Deck`}
+      />
       <Contact />
     </Layout>
   )
@@ -57,65 +66,47 @@ export const IndexQuery = graphql`
   query PageQuery {
     enterence: file(relativePath: { eq: "enterence.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     contact: file(relativePath: { eq: "contact.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     focused: file(relativePath: { eq: "focused.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     personOne: file(relativePath: { eq: "personOne.png" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     personTwo: file(relativePath: { eq: "personTwo.png" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     personThree: file(relativePath: { eq: "personThree.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid 
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     personFour: file(relativePath: { eq: "personFour.png" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     personFive: file(relativePath: { eq: "personFive.png" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     team: file(relativePath: { eq: "team.png" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

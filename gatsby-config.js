@@ -36,6 +36,7 @@ module.exports = {
     //     cookieDomain: "webbandlashbrook.ca",
     //   },
     // },
+    `gatsby-plugin-image`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-smoothscroll`,

@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery } from "gatsby";
-import { IGetAboutResponse } from "../../contracts/about/iget-about-response";
+import { graphql, useStaticQuery } from "gatsby"
+import { IGetAboutResponse } from "../../contracts/about/iget-about-response"
 
 export const GetAbout = () => {
   const about: IGetAboutResponse = useStaticQuery(
@@ -10,14 +10,12 @@ export const GetAbout = () => {
           description
           mainImage {
             asset {
-              fluid(maxWidth: 1200) {
-                ...GatsbySanityImageFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH, formats: AUTO)
             }
           }
         }
       }
     `
   )
-  return about;
+  return about
 }
