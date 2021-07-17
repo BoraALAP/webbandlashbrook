@@ -32,7 +32,6 @@ const Project: FunctionComponent<{
 
   const getMainImage = getImage(mainImage.asset)
 
-  console.log(imagesGallery)
   return (
     <Layout title={title} description={description}>
       <ImgS
@@ -66,6 +65,7 @@ const Project: FunctionComponent<{
                 <ImgC
                   image={eachImage}
                   key={image.asset._id}
+                  ratio={image.asset.metadata._rawDimensions.aspectRatio}
                   alt={`${title}-${photographer}-${index}`}
                 />
               )
@@ -232,12 +232,18 @@ export const pageQuery = graphql`
       mainImage {
         asset {
           gatsbyImageData(layout: FULL_WIDTH, formats: AUTO)
+          metadata {
+            _rawDimensions
+          }
         }
       }
       imagesGallery {
         asset {
           _id
           gatsbyImageData(layout: FULL_WIDTH, formats: AUTO)
+          metadata {
+            _rawDimensions
+          }
         }
       }
     }
